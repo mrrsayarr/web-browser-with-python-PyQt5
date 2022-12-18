@@ -8,16 +8,15 @@ Navbar  çubuğu istebildiği zaman istenildiği kenara taşınabilir
 Yeni sekme açma ve kapatma özelliği getilirdi***
 Varsayılan tarayıcı olarak google otomatik olarak açılıyor
 Aramayı durdurmak için Dur tuşu konuldu(Çarpı işareti şeklinde)
-Sınırsız Yeni sekme açıldığı halde az RAM tüketimi (optimize edildi)
+Sınırsız Yeni sekme açıldığı halde az RAM tüketimi (optimize edildi))
 Kapatma tuşuna basınca "Emin misniz?" şeklinde bir pencere çıkarıldı
-
 """
 from PyQt5.QtWidgets import *
 from PyQt5.QtWebEngineWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
-from PyQt5.QtPrintSupport import * #Herhangi bir sayfayı yazdırmak**
+from PyQt5.QtPrintSupport import * #Herhangi bir sayfayı yazdırmak
 
 import os
 import sys
@@ -272,11 +271,9 @@ class MainWindow(QMainWindow):
 
     def kamera_ac(self):
         pass
-        #os.startfile("C:\Users\denem\Desktop\exedosyaları\kamera\kamera.exe")
-        #subprocess.Popen(['C:/Users/denem/Desktop/WarGods Cheat Defender Win8.exe'])
-        #subprocess.call(['C:\\Users\\denem\\Desktop\\WarGods Cheat Defender Win8.exe'])
-        #os.system('kamera.exe')
-        #open()
+        # os.startfile("C:\Users\denem\Desktop\exedosyaları\kamera\kamera.exe")
+        # os.system('kamera.exe')
+        # open()
 
 
     def linkedin(self):
