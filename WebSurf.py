@@ -48,8 +48,10 @@ class MainWindow(QMainWindow):
         # sekme widget'ı oluşturma
         self.tabs = QTabWidget()
 
-        # Websurf Maximum boyutla açılır.
-        # self.showMaximized() # wrong run
+        # Websurf Maximum boyutla açılır. # self.showMaximized() # wrong run
+
+        # Tam ekran çalıştırır
+        #self.showFullScreen()
 
         # belge modunu aktif etme
         self.tabs.setDocumentMode(True)
