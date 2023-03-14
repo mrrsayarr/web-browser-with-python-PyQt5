@@ -1,5 +1,5 @@
 # web-browser-with-python-PyQt5
-
+```
 Python ve Pyqt5 ile basit işlevli web browser.
 
 Simple functional web browser with Python and Pyqt5.
@@ -25,4 +25,4 @@ Aramayı durdurmak için Dur tuşu konuldu(Çarpı işareti şeklinde)
 Sınırsız Yeni sekme açıldığı halde az RAM tüketimi (optimize edildi))
 
 Kapatma tuşuna basınca "Emin misniz?" şeklinde bir pencere çıkarıldı
-"""
+```
