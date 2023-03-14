@@ -48,8 +48,8 @@ class MainWindow(QMainWindow):
         # sekme widget'ı oluşturma
         self.tabs = QTabWidget()
 
-        #Websurf Maximum boyutla açılır.
-        self.showMaximized()
+        # Websurf Maximum boyutla açılır.
+        # self.showMaximized() # wrong run
 
         # belge modunu aktif etme
         self.tabs.setDocumentMode(True)
@@ -81,33 +81,33 @@ class MainWindow(QMainWindow):
         # ana pencereye araç çubuğu ekleme
         self.addToolBar(navtb)
 
-        self.setWindowIcon(QIcon('web.png'))
+        self.setWindowIcon(QIcon('images/web.png'))
 
         # Geri eylemi oluşturma
         geri_btn = QAction("Geri", self)
         geri_btn.setStatusTip("Önceki sayfaya geri dön")    # durum ipucu ayarlama
-        geri_btn.setIcon(QIcon('geri.png'))   # geri düğmesine eylem ekleme
+        geri_btn.setIcon(QIcon('images/geri.png'))   # geri düğmesine eylem ekleme
         geri_btn.triggered.connect(lambda: self.tabs.currentWidget().back())    # geçerli sekmeyi geri gitmek için
         navtb.addAction(geri_btn)# tool bar kısmına ekleme
 
         # ileri butonunu ekleme
         ileri_btn = QAction("İleri", self)
         ileri_btn.setStatusTip("Sonraki sayfaya git")
-        ileri_btn.setIcon(QIcon('ileri.png'))
+        ileri_btn.setIcon(QIcon('images/ileri.png'))
         ileri_btn.triggered.connect(lambda: self.tabs.currentWidget().forward())
         navtb.addAction(ileri_btn)
 
         # Yenileme düğmesi oluşturma
         yenile_btn = QAction("Yenile", self)
         yenile_btn.setStatusTip("Sayfayı yenile")
-        yenile_btn.setIcon(QIcon('yenile.png'))
+        yenile_btn.setIcon(QIcon('images/yenile.png'))
         yenile_btn.triggered.connect(lambda: self.tabs.currentWidget().reload())
         navtb.addAction(yenile_btn)
 
         # Ana sayfa butonu oluşturma
         anasayfa_btn = QAction("Ana sayfa", self)
         anasayfa_btn.setStatusTip("ana Sayfaya git")
-        anasayfa_btn.setIcon(QIcon('Home.png'))
+        anasayfa_btn.setIcon(QIcon('images/Home.png'))
         #  Ana sayfa butonuna eylem ekleme
         anasayfa_btn.triggered.connect(self.navigate_home)
         navtb.addAction(anasayfa_btn)
@@ -124,39 +124,33 @@ class MainWindow(QMainWindow):
         # araç çubuğuna satır düzenleme ekleme
         navtb.addWidget(self.urlbar)
 
-        linked = QAction("Linkedin", self)
-        linked.setStatusTip("Linkedin")
-        linked.setIcon(QIcon('linkedin.png'))
-        linked.triggered.connect(self.linkedin)
-        navtb.addAction(linked)
-
         hmakine = QAction("Hesap Makinesi", self)
         hmakine.setStatusTip("Hesap Makinesi")
-        hmakine.setIcon(QIcon('hm.png'))
+        hmakine.setIcon(QIcon('images/hm.png'))
         hmakine.triggered.connect(self.siteye_yonlendir)
         navtb.addAction(hmakine)
 
         txteditor = QAction("Metin Editörü", self)
         txteditor.setStatusTip("Metin Editör")
-        txteditor.setIcon(QIcon('txt.png'))
+        txteditor.setIcon(QIcon('images/txt.png'))
         txteditor.triggered.connect(self.txt_editor)
         navtb.addAction(txteditor)
 
         cam_btn = QAction("Kamera", self)
         cam_btn.setStatusTip("Kamera uygulamasını aç")
-        cam_btn.setIcon(QIcon('camera.png'))
+        cam_btn.setIcon(QIcon('images/camera.png'))
         cam_btn.triggered.connect(self.kamera_ac)
         navtb.addAction(cam_btn)
 
         # durdurma düğmesi oluşturma
         dur_btn = QAction("Durdur", self)
         dur_btn.setStatusTip("Mevcut sayfayı durdur")
-        dur_btn.setIcon(QIcon('durdur.png'))
+        dur_btn.setIcon(QIcon('images/durdur.png'))
         dur_btn.triggered.connect(lambda: self.tabs.currentWidget().stop())
         navtb.addAction(dur_btn)
 
         # ilk sekmeyi oluşturma
-        self.add_new_tab(QUrl('http://www.google.com'), 'Ana Sayfa')
+        self.add_new_tab(QUrl('http://www.bing.com'), 'Ana Sayfa')
 
         # tüm bileşenleri göster
         self.show()
@@ -167,10 +161,9 @@ class MainWindow(QMainWindow):
     # yeni sekme ekleme methodu
     def add_new_tab(self, qurl = None, label = "Yeni Sekme"):
 
-        # url boş ise google'a gönderir
+        # url boş ise bing'e gönderir
         if qurl is None:
-            # google url oluşturma
-            qurl = QUrl('http://www.google.com')
+            qurl = QUrl('http://www.bing.com')
 
         # bir QWebEngineView nesnesi oluşturma
         browser = QWebEngineView()
@@ -193,7 +186,7 @@ class MainWindow(QMainWindow):
                                      self.tabs.setTabText(i, browser.page().title()))
 
     def cikis_bttn(self):
-        self.setGeometry(500, 300, 700, 700)
+        #self.setGeometry(500, 300, 700, 700)
 
         self.setWindowTitle("Çıkış")
 
@@ -260,8 +253,8 @@ class MainWindow(QMainWindow):
     #  Ana sayfaya  gitme eylemi
     def navigate_home(self):
 
-        # googl a git
-        self.tabs.currentWidget().setUrl(QUrl("http://www.google.com"))
+        # binge git
+        self.tabs.currentWidget().setUrl(QUrl("http://www.bing.com"))
 
     def siteye_yonlendir(self):
         self.tabs.currentWidget().setUrl(QUrl("https://www.calculator.net/"))
@@ -274,10 +267,6 @@ class MainWindow(QMainWindow):
         # os.startfile("C:\Users\denem\Desktop\exedosyaları\kamera\kamera.exe")
         # os.system('kamera.exe')
         # open()
-
-
-    def linkedin(self):
-        self.tabs.currentWidget().setUrl(QUrl("https://www.linkedin.com/"))
 
     # url'ye gitme yöntemi
     def navigate_to_url(self):
