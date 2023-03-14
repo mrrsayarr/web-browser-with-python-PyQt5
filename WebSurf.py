@@ -149,6 +149,13 @@ class MainWindow(QMainWindow):
         dur_btn.triggered.connect(lambda: self.tabs.currentWidget().stop())
         navtb.addAction(dur_btn)
 
+        # Not uygulamasını açma
+        islem = QAction("İşlem", self)
+        islem.setStatusTip("Not uygulaması açar")
+        islem.setIcon(QIcon('images/web.ico'))
+        islem.triggered.connect(self.islem)
+        navtb.addAction(islem)
+
         # ilk sekmeyi oluşturma
         self.add_new_tab(QUrl('http://www.bing.com'), 'Ana Sayfa')
 
@@ -184,6 +191,16 @@ class MainWindow(QMainWindow):
         # sekme başlığını ayarla
         browser.loadFinished.connect(lambda _, i=i, browser=browser:
                                      self.tabs.setTabText(i, browser.page().title()))
+
+    def islem(self):
+        process = QProcess()
+
+        # Çalıştırılacak programın adını ve parametrelerini belirleme
+        program = 'notepad.exe'
+        arguments = []
+
+        # QProcess ile programı çalıştırma
+        process.startDetached(program, arguments)
 
     def cikis_bttn(self):
         #self.setGeometry(500, 300, 700, 700)
