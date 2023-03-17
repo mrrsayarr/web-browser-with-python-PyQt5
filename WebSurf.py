@@ -1,16 +1,5 @@
-#WebSurf Yenilikler
-"""
-Not dosyası için harici bir uygulamaya gerek kalmadan txt dosyası yazıp kaydedebilme
-Hesap Makinesi tuşun basıp Hesap makinesini açma (online)
-Home, ileri, geri, yenile ve diğer tuşlara icon koyuldu
-Pencere içinde ayrıca icon koyuldu
-Navbar  çubuğu istebildiği zaman istenildiği kenara taşınabilir
-Yeni sekme açma ve kapatma özelliği getilirdi***
-Varsayılan tarayıcı olarak google otomatik olarak açılıyor
-Aramayı durdurmak için Dur tuşu konuldu(Çarpı işareti şeklinde)
-Sınırsız Yeni sekme açıldığı halde az RAM tüketimi (optimize edildi))
-Kapatma tuşuna basınca "Emin misniz?" şeklinde bir pencere çıkarıldı
-"""
+#WebSurf
+
 from PyQt5.QtWidgets import *
 from PyQt5.QtWebEngineWidgets import *
 from PyQt5.QtCore import *
