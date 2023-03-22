@@ -12,7 +12,8 @@ import sys
 import subprocess
 
 class MainWindow(QMainWindow):
-    # Navbar için Dark modu
+    
+    # Dark mode
     app = QApplication([])
     app.setStyle("Fusion")
     palette = QPalette()
@@ -37,9 +38,10 @@ class MainWindow(QMainWindow):
         # sekme widget'ı oluşturma
         self.tabs = QTabWidget()
 
-        # Websurf Maximum boyutla açılır. # self.showMaximized() # wrong run
+        # Wrong Run
+        # self.showMaximized()
 
-        # Tam ekran çalıştırır
+        #  Web Browser FullScreen Runned
         #self.showFullScreen()
 
         # belge modunu aktif etme
@@ -72,7 +74,7 @@ class MainWindow(QMainWindow):
         # ana pencereye araç çubuğu ekleme
         self.addToolBar(navtb)
 
-        self.setWindowIcon(QIcon('images/web.png'))
+        self.setWindowIcon(QIcon('images/web.png')) # Wındows Icon
 
         # Geri eylemi oluşturma
         geri_btn = QAction("Geri", self)
